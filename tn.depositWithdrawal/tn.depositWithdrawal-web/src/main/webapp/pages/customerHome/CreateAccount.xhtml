@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="title">Create Account</ui:define>
+	<ui:define name="content">
+
+
+		<div class="full-width-container block-2">
+			<div class="container">
+				<div class="row">
+					<div class="grid_5">
+						<h:form>
+							<div class="contact-form-loader"></div>
+
+							<h2>
+								Create Your Account
+							</h2>
+
+							<fieldset>
+
+
+
+								<h:panelGrid columns="2" styleClass="col-md-8 col-md-offset-2">
+									<div class="row">
+										<div class="form-group">
+											<label> Last Name </label>
+											<h:inputText styleClass="form-control"
+												value="#{accountBean.user.lastName}" />
+											<h:outputLabel value="Fist Name" />
+											<h:inputText value="#{accountBean.user.fisrtName}"
+												styleClass="form-control" />
+											<h:outputLabel value="Email" />
+											<h:inputText value="#{accountBean.user.email}"
+												styleClass="form-control" />
+											<h:outputLabel value="Phone Number" />
+											<h:inputText value="#{accountBean.user.phoneNumber}"
+												styleClass="form-control" />
+											<h:outputLabel value="Adress" />
+											<h:inputText value="#{accountBean.user.adress}"
+												styleClass="form-control" />
+											<h:outputLabel value="NIC" />
+											<h:inputText value="#{accountBean.user.cin}"
+												styleClass="form-control" />
+											<h:outputLabel value="Login" />
+											<h:inputText value="#{accountBean.user.login}"
+												styleClass="form-control" />
+											<h:outputLabel value="Password" />
+											<h:inputText value="#{accountBean.user.password}"
+												styleClass="form-control" />
+
+										</div>
+									</div>
+
+
+								</h:panelGrid>
+								<h:commandButton action="#{accountBean.doSaveOrUpdateAccount()}"
+									value="add" styleClass="btn btn-primary" />
+							</fieldset>
+
+						</h:form>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

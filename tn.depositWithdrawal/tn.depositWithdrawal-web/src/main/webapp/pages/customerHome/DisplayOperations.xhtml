@@ -1,0 +1,60 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="title">Operations List</ui:define>
+	<ui:define name="content">
+		<h2>
+			My history
+		</h2>
+		<div class="page-content-wrap">
+
+			<div class="row">
+				<div class="col-md-12">
+					<h:form id="f1">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Operation (s)</h3>
+
+							</div>
+							<div class="panel-body">
+								<h:dataTable value="#{loginBean.operations}" var="p" border="2"
+									styleClass="table datatable">
+									<h:column id="c1">
+										<f:facet name="header">
+											<h:outputText value="Amount" />
+										</f:facet>
+										<h:outputText value="#{p.amount}" />
+									</h:column>
+									<h:column id="c2">
+										<f:facet name="header">
+											<h:outputText value="Balance" />
+										</f:facet>
+										<h:outputText value="#{p.balance}" />
+									</h:column>
+									<h:column id="c3">
+										<f:facet name="header">
+											<h:outputText value="Operation Date" />
+										</f:facet>
+										<h:outputText value="#{p.operationDate}" />
+									</h:column>
+									<h:column id="c4">
+										<f:facet name="header">
+											<h:outputText value="State" />
+										</f:facet>
+										<h:outputText value="#{p.state}" />
+									</h:column>
+
+								</h:dataTable>
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>

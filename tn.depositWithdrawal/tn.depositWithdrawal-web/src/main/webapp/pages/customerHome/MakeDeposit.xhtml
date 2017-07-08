@@ -1,0 +1,96 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/WEB-INF/template/template.xhtml">
+	<ui:define name="title">Make Deposit</ui:define>
+	<ui:define name="content">
+		<h2>Make a Deposit</h2>
+		<h:form>
+
+
+
+			<div class="row">
+				<div class="col-md-3" style="text-align: center;">
+					<!-- CONTACT ITEM -->
+					<div class="panel panel-default">
+						<div class="panel-body profile">
+							<div class="profile-image">
+								<h:graphicImage name="images/user3.jpg" alt="User" />
+
+
+							</div>
+							<div class="profile-data">
+								<div class="profile-data-name">Name</div>
+								<div class="profile-data-title">#{loginBean.user.fisrtName}
+									#{loginBean.user.lastName}</div>
+							</div>
+							<div class="profile-controls">
+								<a href="#" class="profile-control-left"><span
+									class="fa fa-info"></span></a> <a href="#"
+									class="profile-control-right"><span class="fa fa-phone"></span></a>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="contact-info">
+								<p>
+									<small>Account Number</small><br />#{loginBean.user.accountNumber}
+								</p>
+								<p>
+									<small>NIC</small><br />#{loginBean.user.cin}
+								</p>
+
+							</div>
+						</div>
+					</div>
+					<!-- END CONTACT ITEM -->
+				</div>
+			</div>
+
+
+		</h:form>
+
+
+
+		<div class="full-width-container block-2">
+			<div class="container">
+				<div class="row">
+					<div class="grid_5">
+						<h:form>
+
+							<div class="contact-form-loader"></div>
+
+							<h2>Create Your Account</h2>
+
+
+
+
+							<h:panelGrid columns="2" styleClass="col-md-8 col-md-offset-2">
+								<div class="row">
+									<div class="form-group">
+
+										<br />
+										<label> Amount </label>
+										<h:inputText styleClass="form-control"
+											value="#{loginBean.operation.balance}" />
+
+										<h:outputLabel value="Re-enter the amount" />
+										<h:inputText value="#{loginBean.user.balance}" />
+
+
+									</div>
+								</div>
+							</h:panelGrid>
+							<h:commandButton
+								action="#{loginBean.doSaveOrUpdateBalanceAccount()}"
+								value="Save" styleClass="btn btn-primary" />
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
